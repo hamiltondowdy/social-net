@@ -52,15 +52,12 @@ const ReactionSchema = new Schema(
         default: Date.now,
         get: createdAtVal => dateFormat(createdAtVal)
       },
-
-      reactions: [ReactionSchema]
-    },
-    {
-      toJSON: {
-        getters: true
-      },
-      id: false
-    }
+  //    toJSON: {
+  //      virtuals: true,
+  //      getters: true
+  //    },
+  //    id: false
+  }
   );
 
 ThoughtSchema.virtual('reactionCount').get(function() {
