@@ -9,8 +9,5 @@ router.get('/thought', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/thought.html'));
 });
 
-router.get('/reaction', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/reaction.html'));
-});
 
 module.exports = router;
