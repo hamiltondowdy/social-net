@@ -17,7 +17,7 @@ const thoughtController = {
 
   // get one pizza by id
   getThoughtById({ params }, res) {
-    Pizza.findOne({ _id: params.id })
+    Thought.findOne({ _id: params.id })
       .populate({
         path: 'reactions',
         select: '-__v'
@@ -42,7 +42,7 @@ const thoughtController = {
           })
           .then(dbUserData => {
             if (!dbUserData) {
-              res.status(404).json({ message: 'No user found with this id!' });
+              res.status(404).json({ message: 'No user FOUND with this id!' });
               return;
             }
             res.json(dbUserData);
@@ -55,7 +55,7 @@ const thoughtController = {
     Thought.findOneAndUpdate({ _id: params.thoughtId }, { $push: { reactions: body } }, { new: true, runValidators: true })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id!' });
+          res.status(404).json({ message: 'No user found with THIS id!' });
           return;
         }
         res.json(dbUserData);
@@ -77,7 +77,7 @@ const thoughtController = {
       })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id!' });
+          res.status(404).json({ message: 'No user found WITH this id!' });
           return;
         }
         res.json(dbUserData);
