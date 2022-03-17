@@ -13,7 +13,7 @@ const handleThoughtSubmit = event => {
     return;
   }
 
-  const formData = { pizzaName, createdBy, createdAt };
+  const formData = { thoughtText, createdBy, createdAt };
 
   fetch('/api/thoughts', {
     method: 'POST',
