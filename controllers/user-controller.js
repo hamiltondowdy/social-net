@@ -91,7 +91,7 @@ const { User, Thought } = require('../models');
   .catch(err => res.json(err));
 },
 
-deleteFriend({ params }, res) {
+removeFriend({ params }, res) {
   // remove friendId from userId's friend list
   User.findOneAndUpdate(
       { _id: params.userId },
